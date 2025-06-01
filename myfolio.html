@@ -12,61 +12,135 @@
             --secondary-color: #64ffda;
             --text-color: #8892b0;
         }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
         body {
             font-family: 'Calibre', sans-serif;
             background-color: var(--primary-color);
             color: var(--text-color);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
         }
+        
         .navbar {
             background-color: rgba(10, 25, 47, 0.85);
             backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
+        
         .hero-section {
             min-height: 100vh;
             display: flex;
             align-items: center;
+            padding-top: 80px;
         }
+        
+        .hero-section h1 {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end);
+        }
+        
         .section-title {
             color: var(--secondary-color);
             font-size: 2rem;
             margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideIn 1s ease-out forwards;
         }
+        
         .highlight {
             color: var(--secondary-color);
         }
+        
         .skill-card, .education-card, .certification-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             padding: 20px;
             margin: 10px 0;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
         }
+        
+        .skill-card.visible, .education-card.visible, .certification-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .skill-card:hover, .education-card:hover, .certification-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.1);
+            animation: pulse 1s ease-in-out;
         }
+        
         .project-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             padding: 20px;
             margin: 15px 0;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
         }
+        
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.1);
         }
+        
         .social-links a {
             color: var(--text-color);
             margin: 0 10px;
             font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
         }
+        
         .social-links a:hover {
             color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand highlight" href="#">Mohit Ingale</a>
@@ -85,7 +159,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section" id="about">
         <div class="container">
             <h1 class="display-4">Hi, I'm <span class="highlight">Mohit Govind Ingale</span></h1>
@@ -99,7 +172,6 @@
         </div>
     </section>
 
-    <!-- Education Section -->
     <section class="py-5" id="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
@@ -129,7 +201,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="py-5" id="skills">
         <div class="container">
             <h2 class="section-title">Skills & Expertise</h2>
@@ -171,101 +242,178 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="py-5 bg-dark" id="certifications">
+    <section class="py-5 bg-dark" id="projects">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="certification-card">
-                        <h3>MKCL Certifications</h3>
-                        <ul class="list-unstyled">
-                            <li>Certified Cyber Security Expert</li>
-                            <li>MSCIT</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="certification-card">
-                        <h3>Cisco Certifications</h3>
-                        <ul class="list-unstyled">
-                            <li>Introduction to Cybersecurity</li>
-                            <li>Ethical Hacking</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="certification-card">
-                        <h3>EC-Council Certifications</h3>
-                        <ul class="list-unstyled">
-                            <li>Android Bug Bounty</li>
-                            <li>SQL Injection Attacks</li>
-                            <li>Practical Cloud Computing</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="certification-card">
-                        <h3>Additional Certifications</h3>
-                        <ul class="list-unstyled">
-                            <li>TCS-iON: Career Edge: IT for Non-IT</li>
-                            <li>Udemy: Mastering Network Security</li>
-                            <li>Udemy: Ethical Hacking Zero to Hero</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="py-5" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="project-card">
                         <h3>Hotel Booking Website</h3>
-                        <p>A responsive hotel booking website with seamless user experience and comprehensive view of amenities.</p>
-                        <div class="d-flex gap-2 mb-3">
-                            <span class="badge bg-secondary">HTML</span>
-                            <span class="badge bg-secondary">CSS</span>
-                            <span class="badge bg-secondary">JavaScript</span>
-                            <span class="badge bg-secondary">Bootstrap</span>
-                        </div>
-                        <a href="https://mohitgingale.github.io/hotel/" class="btn btn-outline-light btn-sm" target="_blank">View Project</a>
+                        <p>A responsive hotel booking platform built with HTML, CSS, JavaScript, and Bootstrap.</p>
+                        <a href="https://mohitgingale.github.io/hotel/" class="btn btn-outline-info" target="_blank">View Project</a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="project-card">
                         <h3>Personal Portfolio</h3>
-                        <p>A responsive portfolio website showcasing academic achievements and technical skills.</p>
-                        <div class="d-flex gap-2 mb-3">
-                            <span class="badge bg-secondary">HTML</span>
-                            <span class="badge bg-secondary">CSS</span>
-                            <span class="badge bg-secondary">JavaScript</span>
-                        </div>
-                        <a href="https://mohitgingale.github.io/myself/" class="btn btn-outline-light btn-sm" target="_blank">View Project</a>
+                        <p>A showcase of my work and skills using modern web technologies.</p>
+                        <a href="https://mohitgingale.github.io/myself/" class="btn btn-outline-info" target="_blank">View Project</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="py-5" id="contact">
-        <div class="container text-center">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="lead mb-4">Open for cybersecurity opportunities and collaborations</p>
-            <p class="mb-3">📧 mohitingale3246@gmail.com | 📱 +91 9370940227</p>
-            <div class="social-links">
-                <a href="https://github.com/mohitgingale" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/mohitgingale" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:mohitingale3246@gmail.com"><i class="fas fa-envelope"></i></a>
+        <!-- ... existing code ... -->
+
+        <section class="py-5" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="contact-card p-4" style="background: rgba(255, 255, 255, 0.05); border-radius: 8px;">
+                            <div class="text-center mb-4">
+                                <div class="social-links mb-4">
+                                    <a href="mailto:mohitingale3246@gmail.com" title="Email">
+                                        <i class="fas fa-envelope fa-2x"></i>
+                                        <span class="d-block mt-2">Email</span>
+                                    </a>
+                                    <a href="https://github.com/mohitgingale" target="_blank" title="GitHub">
+                                        <i class="fab fa-github fa-2x"></i>
+                                        <span class="d-block mt-2">GitHub</span>
+                                    </a>
+                                    <a href="https://linkedin.com/in/mohitgingale" target="_blank" title="LinkedIn">
+                                        <i class="fab fa-linkedin fa-2x"></i>
+                                        <span class="d-block mt-2">LinkedIn</span>
+                                    </a>
+                                    <a href="tel:+919370940227" title="Phone">
+                                        <i class="fas fa-phone fa-2x"></i>
+                                        <span class="d-block mt-2">Call</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <form id="contactForm" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control bg-transparent text-light" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control bg-transparent text-light" id="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control bg-transparent text-light" id="message" rows="4" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-outline-light px-4 py-2">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    
+        <style>
+            /* Add these styles to your existing style section */
+            .contact-card {
+                transition: transform 0.3s ease;
+                animation: fadeIn 1s ease-out forwards;
+            }
+            
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+            }
+            
+            .social-links a {
+                color: var(--text-color);
+                text-decoration: none;
+                transition: all 0.3s ease;
+                padding: 1rem;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.03);
+            }
+            
+            .social-links a:hover {
+                color: var(--secondary-color);
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            .form-control {
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+            }
+            
+            .form-control:focus {
+                border-color: var(--secondary-color);
+                box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, 0.25);
+                background: rgba(255, 255, 255, 0.05) !important;
+            }
+            
+            .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            
+            @media (max-width: 768px) {
+                .social-links {
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                }
+                
+                .social-links a {
+                    padding: 0.5rem;
+                }
+            }
+        </style>
+    
+        <script>
+            // Add this to your existing script section
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const form = e.target;
+                if (form.checkValidity()) {
+                    // Here you would typically send the form data to a server
+                    alert('Thank you for your message! I will get back to you soon.');
+                    form.reset();
+                }
+                form.classList.add('was-validated');
+            });
+        </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.skill-card, .education-card, .certification-card, .project-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        if (navbarToggler && navbarCollapse) {
+            navbarToggler.addEventListener('click', () => {
+                navbarCollapse.classList.toggle('show');
+            });
+        }
+    </script>
 </body>
 </html>
