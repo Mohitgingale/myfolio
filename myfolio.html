@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Ingale - Cybersecurity Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #64ffda;
+            --text-color: #8892b0;
+        }
+        body {
+            font-family: 'Calibre', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+        .navbar {
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .highlight {
+            color: var(--secondary-color);
+        }
+        .skill-card, .education-card, .certification-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover, .education-card:hover, .certification-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .social-links a {
+            color: var(--text-color);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand highlight" href="#">Mohit Ingale</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="about">
+        <div class="container">
+            <h1 class="display-4">Hi, I'm <span class="highlight">Mohit Govind Ingale</span></h1>
+            <h2 class="display-6 mb-4">Cybersecurity Specialist & Developer</h2>
+            <p class="lead">BCA Graduate with 9.29 CGPA | Certified Cyber Security Expert</p>
+            <p class="mt-3">A passionate cybersecurity enthusiast with strong foundation in IT infrastructure and system security. Experienced in ethical hacking, network security, and web development.</p>
+            <div class="mt-4">
+                <a href="#contact" class="btn btn-outline-light me-3">Contact Me</a>
+                <a href="#projects" class="btn btn-outline-info">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-5" id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="education-card">
+                        <h3>BCA</h3>
+                        <p>Bhusawal Arts, Science & P.O. Nahata Commerce College</p>
+                        <p>2022 – 2025 | CGPA: 9.29</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="education-card">
+                        <h3>PGDCA</h3>
+                        <p>ALFA Computer Technology, Bhusawal</p>
+                        <p>2023 | Grade A (63%)</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="education-card">
+                        <h3>DHT - Diploma in Hardware Technology</h3>
+                        <p>ALFA Computer Technology, Bhusawal</p>
+                        <p>2024 | Grade A+ (78%)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-5" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="skill-card">
+                        <h3><i class="fas fa-shield-alt me-2"></i>Cybersecurity</h3>
+                        <ul class="list-unstyled">
+                            <li>Ethical Hacking</li>
+                            <li>Network Security</li>
+                            <li>Digital Forensics</li>
+                            <li>Cloud Security</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card">
+                        <h3><i class="fas fa-code me-2"></i>Programming</h3>
+                        <ul class="list-unstyled">
+                            <li>C/C++</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>Bash Scripting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card">
+                        <h3><i class="fas fa-laptop-code me-2"></i>Web Development</h3>
+                        <ul class="list-unstyled">
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>Bootstrap</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-5 bg-dark" id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="certification-card">
+                        <h3>MKCL Certifications</h3>
+                        <ul class="list-unstyled">
+                            <li>Certified Cyber Security Expert</li>
+                            <li>MSCIT</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="certification-card">
+                        <h3>Cisco Certifications</h3>
+                        <ul class="list-unstyled">
+                            <li>Introduction to Cybersecurity</li>
+                            <li>Ethical Hacking</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="certification-card">
+                        <h3>EC-Council Certifications</h3>
+                        <ul class="list-unstyled">
+                            <li>Android Bug Bounty</li>
+                            <li>SQL Injection Attacks</li>
+                            <li>Practical Cloud Computing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="certification-card">
+                        <h3>Additional Certifications</h3>
+                        <ul class="list-unstyled">
+                            <li>TCS-iON: Career Edge: IT for Non-IT</li>
+                            <li>Udemy: Mastering Network Security</li>
+                            <li>Udemy: Ethical Hacking Zero to Hero</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-5" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="project-card">
+                        <h3>Hotel Booking Website</h3>
+                        <p>A responsive hotel booking website with seamless user experience and comprehensive view of amenities.</p>
+                        <div class="d-flex gap-2 mb-3">
+                            <span class="badge bg-secondary">HTML</span>
+                            <span class="badge bg-secondary">CSS</span>
+                            <span class="badge bg-secondary">JavaScript</span>
+                            <span class="badge bg-secondary">Bootstrap</span>
+                        </div>
+                        <a href="https://mohitgingale.github.io/hotel/" class="btn btn-outline-light btn-sm" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="project-card">
+                        <h3>Personal Portfolio</h3>
+                        <p>A responsive portfolio website showcasing academic achievements and technical skills.</p>
+                        <div class="d-flex gap-2 mb-3">
+                            <span class="badge bg-secondary">HTML</span>
+                            <span class="badge bg-secondary">CSS</span>
+                            <span class="badge bg-secondary">JavaScript</span>
+                        </div>
+                        <a href="https://mohitgingale.github.io/myself/" class="btn btn-outline-light btn-sm" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container text-center">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="lead mb-4">Open for cybersecurity opportunities and collaborations</p>
+            <p class="mb-3">📧 mohitingale3246@gmail.com | 📱 +91 9370940227</p>
+            <div class="social-links">
+                <a href="https://github.com/mohitgingale" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/mohitgingale" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:mohitingale3246@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
